@@ -41,11 +41,12 @@ header{
     background: white;
 }
 .profile-image{
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
+    object-fit:cover;
     border: 4px solid #22c55e;
-    margin-bottom: 20px;
+    margin-bottom: 20px auto;
 }
 .hero h1{
     font-size: 28px;
