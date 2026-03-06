@@ -16,3 +16,5 @@ I'm creating my portfolio which will be responsive
 How to properly combine HTML and CSS when writing code and building websites
 ## challenges faced
 Inability to rrecognise which tags to use or elements and where thus I used MDN reference materials 
+## live demo
+[view Live Demo](http://127.0.0.1:5500/index.html)
