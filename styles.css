@@ -1,149 +1,271 @@
+/* =========================
+   1. RESET DEFAULT STYLES
+========================= */
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+/* =========================
+   2. TYPOGRAPHY SYSTEM
+========================= */
+:root{
+
+    /* Font scale */
+    --font-xs:0.75rem;
+    --font-sm:0.875rem;
+    --font-base:1rem;
+    --font-lg:1.125rem;
+    --font-xl:1.25rem;
+    --font-2xl:1.5rem;
+    --font-3xl:1.875rem;
+    --font-4xl:2.25rem;
+
+    /* Colors */
+    --color-primary:#4CAF7A;
+    --color-secondary:#1E293B;
+    --color-background:#F5F5F5;
+    --color-text:#1F2937;
+    --color-muted:#6B7280;
+
+    --color-primary-light:#6BD19B;
+    --color-primary-dark:#2F8F5B;
+}
+
+/* Base styles */
+
 body{
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: "Poppins", sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    color:var(--color-text);
+    background:var(--color-background);
 }
-/* navbar */
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1{
+    font-size:var(--font-4xl);
+    margin-bottom:10px;
+}
+
+h2{
+    font-size:var(--font-3xl);
+    margin-bottom:20px;
+}
+
+h3{
+    font-size:var(--font-2xl);
+}
+
+p{
+    font-size:var(--font-base);
+    color:var(--color-muted);
+}
+
+/* =========================
+   NAVIGATION BAR (FLEXBOX)
+========================= */
+
 header{
-    background-color: #0f172a;
-    padding: 15px 50px;
+    background:#0F172A;
+    padding:20px 60px;
 }
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
+
 .logo{
-    color: white;
+    color:white;
+    font-weight:600;
+    font-size:var(--font-lg);
 }
+
 .nav-links{
-    list-style: none;
-    display: flex;
-    gap: 25px;
+    list-style:none;
+    display:flex;
+    gap:25px;
 }
+
 .nav-links a{
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
+    text-decoration:none;
+    color:white;
+    font-size:var(--font-sm);
+    transition:0.3s;
 }
+
 .nav-links a:hover{
-    color: #22c55e;
+    color:var(--color-primary);
 }
-/*Hero section */
+
+/* =========================
+   HERO SECTION
+========================= */
+
 .hero{
-    text-align: center;
-    padding: 60px 20px;
-    background: white;
+    text-align:center;
+    padding:80px 20px;
+    background:white;
 }
-.profile-image{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+
+.profile-img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:5px solid var(--color-primary);
     object-fit:cover;
-    border: 4px solid #22c55e;
-    margin-bottom: 20px auto;
+    margin-bottom:20px;
 }
-.hero h1{
-    font-size: 28px;
-    margin-bottom: 20px;
+
+.hero span{
+    color:var(--color-primary);
+    font-weight:500;
 }
-.hero h3{
-    color: #22c55e;
-    margin-bottom: 20px;
-}
+
 .hero p{
-    max-width: 600px;
-    margin: auto;
-    line-height: 1.6;
-    color: #555;
+    max-width:600px;
+    margin:15px auto;
 }
-/* skills section */
+
+/* =========================
+   SKILLS SECTION
+========================= */
+
 .skills{
-    background-color: #0f172a;
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
+    background:#0F172A;
+    padding:80px 20px;
+    color:white;
 }
+
 .skills h2{
-    margin-bottom: 40px;
+    text-align:center;
+    margin-bottom:40px;
 }
+
 .skills-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 25px;
-    max-width: 900px;
-    margin: auto;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:25px;
+    max-width:900px;
+    margin:auto;
 }
+
 .skill-card{
-    background-color: #1e293b;
-    padding: 30px;
-    border-radius: 10px;
-    transition: 0.3s;
+    background:#1E293B;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+    transition:0.3s;
 }
+
 .skill-card:hover{
-    transform: translateY(-5px);
+    transform:translateY(-5px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
 }
-.skill-card.icon{
-    font-size: 30px;
-    margin-bottom: 15px;
-}
+
 .skill-card h3{
-    color: #22c55e;
-    margin-bottom: 15px;
+    color:var(--color-primary);
+    margin-top:10px;
 }
-/* contact section */
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
 .contact{
-    background: white;
-    padding: 60px 20px;
-    text-align: center;
+    padding:80px 20px;
+    text-align:center;
 }
-.contact h2{
-    margin-bottom: 30px;
+
+.contact-form{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
 }
-form{
-    max-width: 500px;
-    margin: auto;
-    text-align: bold;
+
+.contact-form input,
+.contact-form textarea{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:var(--font-base);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    outline:2px solid var(--color-primary);
+}
+
+.contact-form button{
+    padding:12px;
+    border:none;
+    background:var(--color-primary);
+    color:white;
+    font-size:var(--font-base);
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.contact-form button:hover{
+    background:var(--color-primary-dark);
+    transform:translateY(-2px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#0F172A;
+    color:white;
+    text-align:center;
+    padding:20px;
+    font-size:var(--font-sm);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Tablet */
+
+@media (min-width:768px){
+
+.skills-container{
+    grid-template-columns:repeat(2,1fr);
+}
 
 }
-form label {
-    display: block;
-    margin-bottom: 5px;
-    margin-top: 15px;
-    font-weight: bold;
+
+/* Desktop */
+
+@media (min-width:1024px){
+
+.skills-container{
+    grid-template-columns:repeat(4,1fr);
 }
-form input,form textarea{
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: bold;
+
+.hero{
+    padding:120px 20px;
+}
 
 }
-form button {
-    width: 100%;
-    margin-top: 20px;
-    padding: 12px;
-    background-color: #22c55e;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
 
+/* Large screens */
+
+@media (min-width:1280px){
+
+.hero p{
+    font-size:var(--font-lg);
 }
-form button:hover {
-    background-color: #16a34a;
-}
-/* footer */
-footer {
-    background-color: #0f172a;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 14px;
+
 }
